@@ -1,0 +1,16 @@
+Middlewares are functions that take an action and, depending on the action's type, payload or other factors, it will perform certain tasks on or with the action BEFORE they reach any reducers.
+Gatekeepers. 
+
+pass null into the first argument of connect means: "i understand that redux is maintaining some state, but we don't care about that", so the function
+mapDispatchToProps must be the second argument.
+
+A promise is a data structure that doesn't yet contain any of our data... yet we are returning the promise as the payload. 
+
+How does the promise turn into a response? This is the purpose of Redux-Promise. 
+
+Redux-Promise looks at the payload property specifically, and if it is a promise, it stops the action altogether, and once the request finishes, it dispatches a new action, of the same type, but unwraps the promise for us and produces the response. 
+	This allows our code to look synchronous!
+
+Simply pushing data into a redux state array is a trap! Same principle as never set component state with setters. Never manipulate state directly, don't mutate states!
+
+
